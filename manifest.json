@@ -7,6 +7,15 @@
     "default_popup": "index.html",
     "default_icon": "psyduck.png"
   },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
   "content_scripts": [{
     "js": ["scripts/content.js"],
     "matches": [
@@ -14,5 +23,8 @@
       "https://developer.chrome.com/docs/webstore/*",
       "https://dev.to/*"
     ]
-  }]
+  }],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
