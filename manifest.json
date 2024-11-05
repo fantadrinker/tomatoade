@@ -7,6 +7,10 @@
     "default_popup": "index.html",
     "default_icon": "psyduck.png"
   },
+  "minimum_chrome_version": "102",
+  "omnibox": {
+    "keyword": "api"
+  },
   "commands": {
     "_execute_action": {
       "suggested_key": {
@@ -15,7 +19,13 @@
       }
     }
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": [
+    "activeTab", 
+    "scripting",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": ["https://extension-tips.glitch.me/*"],
   "content_scripts": [{
     "js": ["scripts/content.js"],
     "matches": [
@@ -25,6 +35,7 @@
     ]
   }],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "scripts/background.js",
+    "type": "module"
   }
 }

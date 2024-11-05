@@ -1,3 +1,6 @@
+import './helpers/sw-omnibox.js';
+import './helpers/sw-tips.js';
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.action.setBadgeText({
     text: "OFF",
